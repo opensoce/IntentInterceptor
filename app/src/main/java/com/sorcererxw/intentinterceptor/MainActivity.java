@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 return true;
             case R.id.action_save:
-                 DataUtil.writeAllData(mDataAdapter.getData());
+                 DataUtil.writeAll(mDataAdapter.getData());
                 return true;
             case R.id.action_share:
                 Intent shareIntent = new Intent();

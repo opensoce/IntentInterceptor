@@ -74,6 +74,16 @@ public class DataUtil {
     public static void write(String s) throws IOException {
         FileUtils.write(new File(DATA_PATH), s + "\n", "GBK", true);
     }
+    public static void writeAll(List<DataBean> ds) {
+        SimpleDateFormat   formatter   =   new   SimpleDateFormat   ("yyyyMMddHHmmss");
+        Date curDate =  new Date(System.currentTimeMillis());
+        String   key   =   formatter.format(curDate)+".txt";
+        try {
+            FileUtils.write(new File(SAVE_PATH + key), ds.toString() + "\n", "UTF-8", true);
+        }catch (Exception e){
+            writeAllData(ds);
+        }
+    }
 
     public static String parser(Intent intent, int requestCode, Bundle bundle, String from) {
         StringBuilder builder = new StringBuilder();
@@ -152,7 +162,7 @@ public class DataUtil {
     }
 
     public static void writeAllData(List<DataBean> ds) {
-        SimpleDateFormat   formatter   =   new   SimpleDateFormat   ("yyyyMMdd_HHmmss");
+        SimpleDateFormat   formatter   =   new   SimpleDateFormat   ("yyyyMMddHHmmss");
         Date curDate =  new Date(System.currentTimeMillis());
         String   key   =   formatter.format(curDate)+".txt";
         try {

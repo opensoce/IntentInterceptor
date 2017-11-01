@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">"Intent Interceptor"</string>
+
+    <string name="hint_not_data">Do not have any data.|(to start a new activity and go back)</string>
+
+    <string name="hint_not_support_nougat">Sorry, it does not support 7.0+ devices.</string>
+    <string name="send_to">Send To</string>
+    <string name="savingTips">data saved in %1$s</string>
+</resources>
